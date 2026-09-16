@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JobPilot AI — Job Application Tracker</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✦</span><div><b>JobPilot</b><small>AI TRACKER</small></div></div>
+    <nav>
+      <a class="active" href="#dashboard">⌂ <span>Dashboard</span></a>
+      <a href="#applications">▣ <span>Applications</span></a>
+      <a href="#jobs">⌕ <span>Job Discovery</span></a>
+      <a href="#analytics">◒ <span>Analytics</span></a>
+      <a href="#documents">▤ <span>Documents</span></a>
+    </nav>
+    <div class="side-bottom">
+      <div class="cloud"><span>☁</span><div><b>GCP Powered</b><small>Secure cloud workspace</small></div></div>
+      <a href="#settings">⚙ <span>Settings</span></a>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">AI CAREER COMMAND CENTER</p>
+        <h1>Good evening, Sangam <span>✦</span></h1>
+        <p class="muted">Track every application. Understand every opportunity. Move faster.</p>
+      </div>
+      <div class="header-actions"><button class="icon-btn">⌕</button><button class="avatar">SD</button></div>
+    </header>
+
+    <section id="dashboard" class="stats">
+      <article class="stat"><div class="stat-icon blue">▣</div><div><span>Total Applications</span><strong>48</strong><small class="up">↑ 12% this month</small></div></article>
+      <article class="stat"><div class="stat-icon purple">◉</div><div><span>Active Interviews</span><strong>06</strong><small class="up">↑ 2 this week</small></div></article>
+      <article class="stat"><div class="stat-icon cyan">◎</div><div><span>Response Rate</span><strong>31%</strong><small class="up">↑ 4.2% this month</small></div></article>
+      <article class="stat"><div class="stat-icon orange">◷</div><div><span>Tasks Due</span><strong>04</strong><small class="warn">Next: Google • 2d</small></div></article>
+    </section>
+
+    <section class="grid-two">
+      <article class="panel chart-panel" id="analytics">
+        <div class="panel-head"><div><h2>Application Pipeline</h2><p>Last 30 days</p></div><select><option>Last 30 days</option><option>Last 90 days</option></select></div>
+        <div class="pipeline">
+          <div><span>Applied</span><b>48</b><i style="width:100%"></i></div>
+          <div><span>Screening</span><b>18</b><i style="width:38%"></i></div>
+          <div><span>Interview</span><b>6</b><i style="width:18%"></i></div>
+          <div><span>Offer</span><b>2</b><i style="width:9%"></i></div>
+        </div>
+      </article>
+
+      <article class="panel ai-panel">
+        <div class="panel-head"><div><h2>✦ AI Career Insights</h2><p>Powered by Vertex AI</p></div><span class="live">LIVE</span></div>
+        <div class="insight"><span>↗</span><div><b>Strong match detected</b><p>Your Python + ML profile aligns with 84% of the roles saved this week.</p></div></div>
+        <div class="insight"><span>⚡</span><div><b>Follow-up opportunity</b><p>3 applications have been waiting for a response for 7+ days.</p></div></div>
+        <button class="primary">Generate Career Recommendations →</button>
+      </article>
+    </section>
+
+    <section class="panel" id="applications">
+      <div class="panel-head"><div><h2>Recent Applications</h2><p>Stay on top of your job search</p></div><button class="primary" onclick="addApplication()">＋ Add Application</button></div>
+      <div class="table-wrap"><table><thead><tr><th>COMPANY / ROLE</th><th>DATE</th><th>STAGE</th><th>AI MATCH</th><th>NEXT ACTION</th></tr></thead>
+      <tbody id="appRows">
+      <tr><td><div class="company"><span class="company-logo">G</span><div><b>Google</b><small>Software Engineer Intern</small></div></div></td><td>Sep 14, 2026</td><td><span class="badge interview">Interview</span></td><td><b>92%</b></td><td>Prepare for interview <span class="arrow">→</span></td></tr>
+      <tr><td><div class="company"><span class="company-logo meta">M</span><div><b>Microsoft</b><small>AI/ML Intern</small></div></div></td><td>Sep 12, 2026</td><td><span class="badge screening">Screening</span></td><td><b>89%</b></td><td>Check email <span class="arrow">→</span></td></tr>
+      <tr><td><div class="company"><span class="company-logo amazon">a</span><div><b>Amazon</b><small>Cloud Support Associate</small></div></div></td><td>Sep 09, 2026</td><td><span class="badge applied">Applied</span></td><td><b>81%</b></td><td>Follow up in 2 days <span class="arrow">→</span></td></tr>
+      <tr><td><div class="company"><span class="company-logo ibm">IBM</span><div><b>IBM</b><small>Data Science Intern</small></div></div></td><td>Sep 06, 2026</td><td><span class="badge rejected">Closed</span></td><td><b>76%</b></td><td>Review feedback <span class="arrow">→</span></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="grid-two bottom" id="jobs">
+      <article class="panel">
+        <div class="panel-head"><div><h2>Recommended Jobs</h2><p>Personalized for your profile</p></div><a class="link">View all →</a></div>
+        <div class="job"><span class="job-logo">N</span><div><b>AI Engineer Intern</b><small>NVIDIA • Bengaluru • Hybrid</small></div><strong>96%</strong></div>
+        <div class="job"><span class="job-logo">A</span><div><b>Machine Learning Intern</b><small>Adobe • Noida • Remote</small></div><strong>91%</strong></div>
+        <div class="job"><span class="job-logo">D</span><div><b>Software Engineer Intern</b><small>Databricks • Remote</small></div><strong>88%</strong></div>
+      </article>
+      <article class="panel" id="documents">
+        <div class="panel-head"><div><h2>Resume Intelligence</h2><p>AI-powered profile health</p></div><span class="score">87/100</span></div>
+        <div class="scorebar"><i></i></div>
+        <div class="checks"><span>✓ ATS compatibility</span><span>✓ Skills coverage</span><span>! Quantified impact</span></div>
+        <button class="secondary">Analyze Resume with AI</button>
+      </article>
+    </section>
+
+    <footer><span>JobPilot AI</span> • Built for focused job seekers <span>GCP architecture ready</span></footer>
+  </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
